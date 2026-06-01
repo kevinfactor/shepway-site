@@ -36,6 +36,18 @@ npm run start   # serve the production build
 | `app/services/ceilings-partitions/compare/page.tsx` | Side-by-side comparison view |
 | `public/images/` | Project photos and logos |
 
+## Single-file static version
+
+`ceilings-partitions-standalone.html` is a fully self-contained copy of the
+page — CSS and all images are embedded inside the one file, with no JavaScript.
+Open it directly in any browser, email it, or drop it onto any web server as-is.
+It has no build step and no dependencies.
+
+To regenerate it from the source: build a static export
+(`output: "export"` + `images: { unoptimized: true }` in `next.config.ts`,
+then `npm run build`) and inline the resulting CSS/images into the exported
+`out/services/ceilings-partitions.html`.
+
 ## Notes
 
 - Styling tokens are sampled from the live site (`shepwaycommercial.co.uk`): brand red `#d62828`, navy `#1a3a5e`, light-blue rows `#e6f0f7`.
